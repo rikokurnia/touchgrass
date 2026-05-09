@@ -368,7 +368,7 @@ function shareResult() {
   const resultTitleText = resultTitle.textContent;
   const resultDescText = resultDescription.textContent;
   
-  const shareText = `🌱 TouchGrass Result:\n\n${resultTitleText}\n${resultDescText}\n\nTake the quiz: https://touchgrass.dev (not real yet 😄)`;
+  const shareText = `🌱 TouchGrass Result:\n\n${resultTitleText}\n${resultDescText}\n\nTake the quiz: https://touchhgrass.vercel.app/ (leshgoo 😄)`;
   
   if (navigator.share) {
     navigator.share({
