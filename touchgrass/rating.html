@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TouchGrass — Self-Rating</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="public/images/logo.png">
+</head>
+<body class="dashboard-page">
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span>🌱</span> TOUCHGRASS
+    </a>
+    <div class="navbar-menu">
+      <a href="index.html" class="navbar-link">Home</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+      <a href="rating.html" class="navbar-link" style="background: var(--win95-blue); color: var(--win95-white);">Self-Rating</a>
+      <a href="login.html" class="navbar-link">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       SELF-RATING CONTENT
+       ============================================ -->
+  <main class="dashboard-content">
+    <div class="dashboard-quiz-container">
+      
+      <!-- Progress Bar -->
+      <div class="quiz-progress-bar">
+        <div class="progress-track">
+          <div id="rating-progress-fill" class="progress-fill" style="width: 0%;"></div>
+        </div>
+        <span id="rating-progress-text" class="progress-text">Step 1 of 2: Check-In</span>
+      </div>
+
+      <!-- Mood Check-in Window -->
+      <div id="mood-window" class="win95-dialog quiz-window" style="display: block;">
+        <div class="dialog-title-bar">
+          <div style="display: flex; align-items: center;">
+            <span class="dialog-icon">🧠</span>
+            <span>mood_checkin.exe</span>
+          </div>
+          <div class="window-controls">
+            <span class="window-btn">_</span>
+            <span class="window-btn">×</span>
+          </div>
+        </div>
+        <div class="dialog-content mood-content">
+          <h2 class="mood-heading">HOW BURNT OUT DO YOU FEEL RIGHT NOW?</h2>
+          <p class="mood-subtitle">
+            Be honest. This isn't for your manager. It's for you.<br>
+            Slide to your current stress level before we begin.
+          </p>
+          
+          <div class="mood-slider-container">
+            <input 
+              type="range" 
+              id="mood-slider" 
+              class="mood-slider" 
+              min="1" 
+              max="10" 
+              value="5"
+              oninput="updateMoodLabel()"
+            >
+            <div class="mood-range-labels">
+              <span>1 (Chill)</span>
+              <span>5 (Meh)</span>
+              <span>10 (Dying)</span>
+            </div>
+            <span id="mood-label" class="mood-label">🙂 A bit tired, but managing</span>
+          </div>
+          
+          <button onclick="submitMoodCheckin()" class="win95-btn win95-btn-primary" style="font-size: 1.1rem; padding: 10px 28px; margin-top: 1rem;">
+            🚀 START ASSESSMENT
+          </button>
+          
+          <p style="font-size: 0.75rem; color: #808080; margin-top: 1rem;">
+            This data stays on your device. We don't track anything.
+          </p>
+        </div>
+      </div>
+
+      <!-- Question Window -->
+      <div id="rating-question-window" class="win95-dialog quiz-window" style="display: none;">
+        <div class="dialog-title-bar">
+          <div style="display: flex; align-items: center;">
+            <span class="dialog-icon">🧠</span>
+            <span>mental_health_assessment.exe</span>
+          </div>
+          <div class="window-controls">
+            <span class="window-btn">_</span>
+            <span class="window-btn">×</span>
+          </div>
+        </div>
+        <div class="dialog-content quiz-content">
+          <h2 id="rating-question-text" class="quiz-question"></h2>
+          <div id="rating-answers-grid" class="answers-grid"></div>
+        </div>
+      </div>
+
+      <!-- Calculating Window -->
+      <div id="rating-calculating-window" class="win95-dialog quiz-window" style="display: none;">
+        <div class="dialog-title-bar">
+          <div style="display: flex; align-items: center;">
+            <span class="dialog-icon">🧮</span>
+            <span>analyzing_wellbeing.exe</span>
+          </div>
+        </div>
+        <div class="dialog-content" style="text-align: center; padding: 3rem 2rem;">
+          <div class="calculating-emoji">🧘</div>
+          <h2 class="pixel-heading" style="font-size: 0.9rem; margin: 1.5rem 0; color: #000080;">
+            ANALYZING YOUR WELL-BEING...
+          </h2>
+          <p style="font-size: 0.9rem; color: #808080;">
+            Processing your responses...<br>
+            Calculating burnout indicators...<br>
+            Generating coping recommendations...
+          </p>
+        </div>
+      </div>
+
+      <!-- Result Window -->
+      <div id="rating-result-window" class="win95-dialog quiz-window" style="display: none;">
+        <div class="dialog-title-bar">
+          <div style="display: flex; align-items: center;">
+            <span class="dialog-icon">📊</span>
+            <span>wellbeing_report.txt</span>
+          </div>
+          <div class="window-controls">
+            <span class="window-btn">_</span>
+            <span class="window-btn">×</span>
+          </div>
+        </div>
+        <div class="dialog-content result-content">
+          
+          <!-- Burnout Score -->
+          <div id="burnout-score-container"></div>
+          
+          <!-- Archetype -->
+          <div id="rating-result-emoji" class="result-emoji"></div>
+          <h2 id="rating-result-title" class="result-title"></h2>
+          <p id="rating-result-description" class="result-description"></p>
+          
+          <!-- Coping Kit -->
+          <div id="coping-kit-container"></div>
+          
+          <!-- Warning for high burnout -->
+          <div id="crisis-warning" style="display: none; background: #ff0000; color: white; padding: 1rem; margin: 1rem 0; text-align: center; font-size: 0.9rem;">
+            <strong>🚨 YOUR WELL-BEING SCORE IS CONCERNING</strong><br>
+            Please consider talking to someone you trust or a mental health professional.<br>
+            You don't have to go through this alone.
+          </div>
+
+          <div class="quote-box">
+            <span class="quote-label">💡 WISDOM FROM THE INTERNET:</span>
+            <p id="rating-quote-text" class="quote-text">Loading wisdom...</p>
+          </div>
+
+          <div class="result-actions">
+            <button id="rating-share-btn" class="win95-btn">📤 Share Result</button>
+            <button id="rating-restart-btn" class="win95-btn win95-btn-primary">🔄 Retake Assessment</button>
+            <a href="dashboard.html" class="win95-btn">🏠 Back to Dashboard</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/rating.js"></script>
+
+</body>
+</html>

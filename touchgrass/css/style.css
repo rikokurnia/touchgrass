@@ -944,6 +944,297 @@ body {
 }
 
 /* ============================================
+   MOOD CHECK-IN STYLES
+   ============================================ */
+.mood-window .dialog-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.mood-heading {
+  font-family: var(--pixel-font);
+  font-size: 0.85rem;
+  color: var(--win95-blue);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.mood-subtitle {
+  font-size: 0.95rem;
+  color: var(--win95-black);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.mood-slider-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+}
+
+.mood-slider {
+  width: 100%;
+  height: 24px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--win95-white);
+  border: 2px solid var(--win95-dark-grey);
+  border-right-color: var(--win95-white);
+  border-bottom-color: var(--win95-white);
+  outline: none;
+  cursor: pointer;
+}
+
+.mood-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 24px;
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  cursor: pointer;
+}
+
+.mood-slider::-moz-range-thumb {
+  width: 16px;
+  height: 24px;
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  cursor: pointer;
+}
+
+.mood-label {
+  font-family: var(--pixel-font);
+  font-size: 0.65rem;
+  margin-top: 1rem;
+  display: block;
+  line-height: 1.5;
+  min-height: 2.5rem;
+}
+
+.mood-range-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--win95-dark-grey);
+}
+
+/* ============================================
+   BURNOUT SCORE STYLES
+   ============================================ */
+.burnout-score-container {
+  margin: 1.5rem 0;
+}
+
+.burnout-score-box {
+  background: var(--win95-white);
+  border: 3px solid;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.burnout-label {
+  font-family: var(--pixel-font);
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.burnout-number {
+  font-family: var(--pixel-font);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.burnout-bar-container {
+  width: 100%;
+  height: 20px;
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-dark-grey);
+  border-right-color: var(--win95-white);
+  border-bottom-color: var(--win95-white);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.burnout-bar-fill {
+  height: 100%;
+  transition: width 1s ease;
+}
+
+.mood-comparison {
+  font-size: 0.85rem;
+  color: var(--win95-black);
+  line-height: 1.6;
+}
+
+/* ============================================
+   COPING KIT STYLES
+   ============================================ */
+.coping-kit-container {
+  margin: 1.5rem 0;
+}
+
+.coping-heading {
+  font-family: var(--pixel-font);
+  font-size: 0.7rem;
+  color: var(--win95-dark-blue);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.coping-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.coping-card {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 1rem;
+  text-align: center;
+}
+
+.coping-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.coping-title {
+  font-family: var(--pixel-font);
+  font-size: 0.55rem;
+  color: var(--win95-blue);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.coping-desc {
+  font-size: 0.8rem;
+  color: var(--win95-black);
+  line-height: 1.4;
+}
+
+/* ============================================
+   RESPONSIVE MOOD / BURNOUT / COPING
+   ============================================ */
+@media (max-width: 640px) {
+  .coping-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .burnout-number {
+    font-size: 2rem;
+  }
+  
+  .mood-window .dialog-content {
+    padding: 1.25rem;
+  }
+  
+  .mood-heading {
+    font-size: 0.7rem;
+  }
+}
+
+/* ============================================
+   DASHBOARD CARDS
+   ============================================ */
+.dashboard-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem 1rem;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dashboard-card {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--win95-black);
+  transition: transform 0.2s, background 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  background: var(--win95-light-grey);
+}
+
+.dashboard-card:active {
+  border: 2px solid var(--win95-black);
+  border-right-color: var(--win95-white);
+  border-bottom-color: var(--win95-white);
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: var(--pixel-font);
+  font-size: 0.8rem;
+  color: var(--win95-blue);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--win95-black);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.card-tag {
+  display: inline-block;
+  color: var(--win95-white);
+  font-size: 0.65rem;
+  font-family: var(--pixel-font);
+  padding: 4px 8px;
+}
+
+/* ============================================
+   RESPONSIVE DASHBOARD
+   ============================================ */
+@media (max-width: 640px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-card {
+    padding: 1.5rem;
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================
    RESPONSIVE NAVBAR
    ============================================ */
 @media (max-width: 640px) {

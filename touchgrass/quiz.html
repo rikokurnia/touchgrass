@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TouchGrass — Fun Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="public/images/logo.png">
+</head>
+<body class="dashboard-page">
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span>🌱</span> TOUCHGRASS
+    </a>
+    <div class="navbar-menu">
+      <a href="index.html" class="navbar-link">Home</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+      <a href="quiz.html" class="navbar-link" style="background: var(--win95-blue); color: var(--win95-white);">Fun Quiz</a>
+      <a href="login.html" class="navbar-link">Logout</a>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       FUN QUIZ CONTENT
+       ============================================ -->
+  <main class="dashboard-content">
+    <div class="dashboard-quiz-container">
+      
+      <!-- Progress Bar -->
+      <div class="quiz-progress-bar">
+        <div class="progress-track">
+          <div id="progress-fill" class="progress-fill" style="width: 0%;"></div>
+        </div>
+        <span id="progress-text" class="progress-text">Question 1 of 8</span>
+      </div>
+
+      <!-- Question Window -->
+      <div id="question-window" class="win95-dialog quiz-window">
+        <div class="dialog-title-bar">
+          <div style="display: flex; align-items: center;">
+            <span class="dialog-icon">🎮</span>
+            <span>fun_quiz.exe</span>
+          </div>
+          <div class="window-controls">
+            <span class="window-btn">_</span>
+            <span class="window-btn">×</span>
+          </div>
+        </div>
+        <div class="dialog-content quiz-content">
+          <h2 id="question-text" class="quiz-question"></h2>
+          <div id="answers-grid" class="answers-grid"></div>
+        </div>
+      </div>
+
+      <!-- Calculating Window -->
+      <div id="calculating-window" class="win95-dialog quiz-window" style="display: none;">
+        <div class="dialog-title-bar">
+          <div style="display: flex; align-items: center;">
+            <span class="dialog-icon">🧮</span>
+            <span>calculating_destiny.exe</span>
+          </div>
+        </div>
+        <div class="dialog-content" style="text-align: center; padding: 3rem 2rem;">
+          <div class="calculating-emoji">🤔</div>
+          <h2 class="pixel-heading" style="font-size: 0.9rem; margin: 1.5rem 0; color: #000080;">
+            ANALYZING YOUR LIFE CHOICES...
+          </h2>
+          <p style="font-size: 0.9rem; color: #808080;">
+            Checking your commit history...<br>
+            Counting your open tabs...<br>
+            Measuring your grass-touching deficit...
+          </p>
+        </div>
+      </div>
+
+      <!-- Result Window -->
+      <div id="result-window" class="win95-dialog quiz-window" style="display: none;">
+        <div class="dialog-title-bar">
+          <div style="display: flex; align-items: center;">
+            <span class="dialog-icon">📋</span>
+            <span>career_assessment_result.txt</span>
+          </div>
+          <div class="window-controls">
+            <span class="window-btn">_</span>
+            <span class="window-btn">×</span>
+          </div>
+        </div>
+        <div class="dialog-content result-content">
+          <div id="result-emoji" class="result-emoji"></div>
+          <h2 id="result-title" class="result-title"></h2>
+          <p id="result-description" class="result-description"></p>
+          
+          <div class="result-guide">
+            <h3 class="guide-heading">CAREER TRANSITION GUIDE:</h3>
+            <ol id="result-steps" class="guide-steps"></ol>
+          </div>
+
+          <div class="quote-box">
+            <span class="quote-label">💡 WISDOM FROM THE INTERNET:</span>
+            <p id="quote-text" class="quote-text">Loading wisdom...</p>
+          </div>
+
+          <div class="result-actions">
+            <button id="share-btn" class="win95-btn">📤 Share Result</button>
+            <button id="restart-btn" class="win95-btn win95-btn-primary">🔄 Retake Quiz</button>
+            <a href="dashboard.html" class="win95-btn">🏠 Back to Dashboard</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/quiz.js"></script>
+
+</body>
+</html>
