@@ -1,0 +1,776 @@
+/* ============================================
+   TOUCHGRASS — Windows 95 Retro Theme
+   ============================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --win95-blue: #000080;
+  --win95-dark-blue: #0000a5;
+  --win95-grey: #c0c0c0;
+  --win95-light-grey: #dfdfdf;
+  --win95-dark-grey: #808080;
+  --win95-black: #000000;
+  --win95-white: #ffffff;
+  --win95-green: #008000;
+  --win95-red: #ff0000;
+  --win95-yellow: #ffff00;
+  --pixel-font: 'Press Start 2P', cursive;
+  --body-font: 'MS Sans Serif', Tahoma, sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--win95-grey);
+  color: var(--win95-black);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+.header-section {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../public/images/bg-header.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem 1rem;
+}
+
+.header-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+  pointer-events: none;
+}
+
+/* ── Win95 Window in Hero ── */
+.hero-window {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  width: 100%;
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  box-shadow: 2px 2px 0 var(--win95-dark-grey);
+}
+
+.hero-window .title-bar {
+  background: linear-gradient(90deg, var(--win95-dark-blue), var(--win95-blue));
+  color: var(--win95-white);
+  padding: 3px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hero-window .title-bar .title-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-window .title-bar .window-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.hero-window .title-bar .window-btn {
+  width: 16px;
+  height: 14px;
+  background: var(--win95-grey);
+  border: 1px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--win95-black);
+  cursor: default;
+}
+
+.hero-window .window-content {
+  padding: 1.5rem;
+  background: var(--win95-white);
+  border: 2px solid var(--win95-dark-grey);
+  border-top: none;
+}
+
+/* ── Pixel Font Heading ── */
+.pixel-heading {
+  font-family: var(--pixel-font);
+  font-size: 1.8rem;
+  color: var(--win95-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  text-shadow: 2px 2px 0 var(--win95-dark-grey);
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--win95-black);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+.hero-tagline {
+  font-style: italic;
+  text-align: center;
+  color: var(--win95-dark-grey);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--win95-blue);
+  padding-left: 1rem;
+}
+
+/* ── Win95 Button ── */
+.win95-btn {
+  display: inline-block;
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 8px 20px;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  color: var(--win95-black);
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: none;
+}
+
+.win95-btn:active {
+  border: 2px solid var(--win95-black);
+  border-right-color: var(--win95-white);
+  border-bottom-color: var(--win95-white);
+  padding: 9px 19px 7px 21px;
+}
+
+.win95-btn-primary {
+  background: var(--win95-grey);
+  font-weight: bold;
+}
+
+.win95-btn:hover {
+  background: var(--win95-light-grey);
+}
+
+.hero-cta {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hero-cta .win95-btn {
+  font-size: 1.1rem;
+  padding: 10px 28px;
+}
+
+/* ── Blinking Cursor ── */
+.cursor-blink {
+  display: inline-block;
+  width: 12px;
+  height: 1.2em;
+  background: var(--win95-blue);
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============================================
+   CONTENT SECTIONS (Grass Background)
+   ============================================ */
+.content-section {
+  background-image: url('../public/images/second-bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+.content-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+.content-container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ============================================
+   WIN95 DIALOG BOXES
+   ============================================ */
+.win95-dialog {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  box-shadow: 2px 2px 0 var(--win95-dark-grey);
+  max-width: 100%;
+}
+
+.win95-dialog .dialog-title-bar {
+  background: linear-gradient(90deg, var(--win95-dark-blue), var(--win95-blue));
+  color: var(--win95-white);
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.win95-dialog .dialog-title-bar .dialog-icon {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.win95-dialog .dialog-content {
+  padding: 1.25rem;
+  background: var(--win95-white);
+  border: 2px solid var(--win95-dark-grey);
+  border-top: none;
+}
+
+/* ── Stats Grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  background: var(--win95-light-grey);
+}
+
+.stat-number {
+  font-family: var(--pixel-font);
+  font-size: 1.6rem;
+  color: var(--win95-red);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--win95-black);
+  line-height: 1.4;
+}
+
+/* ── Hook Section ── */
+.hook-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--win95-black);
+  margin-bottom: 1rem;
+}
+
+.hook-text:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  background: var(--win95-yellow);
+  padding: 0 3px;
+  font-weight: bold;
+}
+
+/* ── Feature List ── */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.feature-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.8rem;
+  position: relative;
+  font-size: 0.95rem;
+  border-bottom: 1px dotted var(--win95-dark-grey);
+}
+
+.feature-list li:last-child {
+  border-bottom: none;
+}
+
+.feature-list li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--win95-blue);
+  font-weight: bold;
+}
+
+/* ── Archetype Preview ── */
+.archetype-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.archetype-card {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 1rem;
+  text-align: center;
+}
+
+.archetype-emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.archetype-name {
+  font-family: var(--pixel-font);
+  font-size: 0.7rem;
+  color: var(--win95-blue);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.archetype-desc {
+  font-size: 0.8rem;
+  color: var(--win95-black);
+  line-height: 1.4;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 2rem;
+  text-align: center;
+}
+
+.cta-section .pixel-heading {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--win95-dark-blue);
+}
+
+.cta-text {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--win95-black);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer-section {
+  background: var(--win95-grey);
+  border-top: 2px solid var(--win95-white);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--win95-dark-grey);
+}
+
+.footer-section a {
+  color: var(--win95-blue);
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 640px) {
+  .pixel-heading {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .hero-window .window-content {
+    padding: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .archetype-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .content-section {
+    padding: 2rem 0.75rem;
+  }
+  
+  .win95-btn {
+    font-size: 0.9rem;
+    padding: 6px 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .archetype-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pixel-heading {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+
+/* ============================================
+   QUIZ SECTION STYLES
+   ============================================ */
+.quiz-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.quiz-container {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quiz-window {
+  width: 100%;
+}
+
+/* ── Progress Bar ── */
+.quiz-progress-bar {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-track {
+  flex: 1;
+  height: 20px;
+  background: var(--win95-white);
+  border: 2px solid var(--win95-dark-grey);
+  border-right-color: var(--win95-white);
+  border-bottom-color: var(--win95-white);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--win95-dark-blue), var(--win95-blue));
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--win95-black);
+  white-space: nowrap;
+  font-family: var(--pixel-font);
+  font-size: 0.65rem;
+}
+
+/* ── Quiz Content ── */
+.quiz-content {
+  padding: 1.5rem;
+}
+
+.quiz-question {
+  font-family: var(--body-font);
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--win95-black);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ── Answers Grid ── */
+.answers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.answer-btn {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 14px 16px;
+  font-family: var(--body-font);
+  font-size: 0.95rem;
+  color: var(--win95-black);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  line-height: 1.4;
+}
+
+.answer-btn:hover {
+  background: var(--win95-light-grey);
+}
+
+.answer-btn:active {
+  border: 2px solid var(--win95-black);
+  border-right-color: var(--win95-white);
+  border-bottom-color: var(--win95-white);
+}
+
+.answer-btn.selected {
+  background: var(--win95-blue);
+  color: var(--win95-white);
+}
+
+/* ── Calculating Window ── */
+.calculating-emoji {
+  font-size: 4rem;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ── Result Content ── */
+.result-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.result-emoji {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.result-title {
+  font-family: var(--pixel-font);
+  font-size: 1.1rem;
+  color: var(--win95-blue);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.result-description {
+  font-size: 1rem;
+  color: var(--win95-black);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Career Guide ── */
+.result-guide {
+  background: var(--win95-grey);
+  border: 2px solid var(--win95-white);
+  border-right-color: var(--win95-black);
+  border-bottom-color: var(--win95-black);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.guide-heading {
+  font-family: var(--pixel-font);
+  font-size: 0.65rem;
+  color: var(--win95-dark-blue);
+  margin-bottom: 0.75rem;
+}
+
+.guide-steps {
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--win95-black);
+}
+
+.guide-steps li {
+  margin-bottom: 0.25rem;
+}
+
+/* ── Quote Box ── */
+.quote-box {
+  background: #f0f8ff;
+  border: 2px solid var(--win95-blue);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.quote-label {
+  font-family: var(--pixel-font);
+  font-size: 0.6rem;
+  color: var(--win95-blue);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.quote-text {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--win95-black);
+  line-height: 1.5;
+}
+
+/* ── Result Actions ── */
+.result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   QUIZ RESPONSIVE
+   ============================================ */
+@media (max-width: 640px) {
+  .answers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .answer-btn {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+  
+  .quiz-content {
+    padding: 1rem;
+  }
+  
+  .quiz-question {
+    font-size: 1rem;
+  }
+  
+  .result-content {
+    padding: 1.25rem;
+  }
+  
+  .result-emoji {
+    font-size: 3.5rem;
+  }
+  
+  .result-title {
+    font-size: 0.85rem;
+  }
+  
+  .result-actions {
+    flex-direction: column;
+  }
+  
+  .result-actions .win95-btn {
+    width: 100%;
+  }
+}
