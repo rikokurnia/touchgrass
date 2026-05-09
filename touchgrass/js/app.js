@@ -187,9 +187,20 @@ const restartBtn = document.getElementById('restart-btn');
 // ============================================
 
 function init() {
-  startBtn.addEventListener('click', startQuiz);
-  shareBtn.addEventListener('click', shareResult);
-  restartBtn.addEventListener('click', restartQuiz);
+  // If on dashboard page, auto-start quiz
+  if (document.body.classList.contains('dashboard-page')) {
+    startQuiz();
+  }
+  
+  if (startBtn) {
+    startBtn.addEventListener('click', startQuiz);
+  }
+  if (shareBtn) {
+    shareBtn.addEventListener('click', shareResult);
+  }
+  if (restartBtn) {
+    restartBtn.addEventListener('click', restartQuiz);
+  }
 }
 
 function startQuiz() {
@@ -197,15 +208,18 @@ function startQuiz() {
   state.currentQuestionIndex = 0;
   state.scores = { lele: 0, rumput: 0, kapalSelam: 0, kandangAyam: 0 };
   state.selectedAnswer = null;
+  state.isAnimating = false;
   
-  // Show quiz overlay
-  quizOverlay.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+  // Show quiz overlay (if exists - for landing page modal)
+  if (quizOverlay) {
+    quizOverlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
   
   // Show question window, hide others
-  questionWindow.style.display = 'block';
-  calculatingWindow.style.display = 'none';
-  resultWindow.style.display = 'none';
+  if (questionWindow) questionWindow.style.display = 'block';
+  if (calculatingWindow) calculatingWindow.style.display = 'none';
+  if (resultWindow) resultWindow.style.display = 'none';
   
   // Render first question
   renderQuestion();
@@ -397,14 +411,22 @@ function copyToClipboard(text) {
 }
 
 function restartQuiz() {
-  // Hide quiz overlay
-  quizOverlay.style.display = 'none';
-  document.body.style.overflow = '';
+  // If on dashboard page, just restart quiz in place
+  if (document.body.classList.contains('dashboard-page')) {
+    startQuiz();
+    return;
+  }
+  
+  // For landing page modal
+  if (quizOverlay) {
+    quizOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
   
   // Reset all windows
-  questionWindow.style.display = 'block';
-  calculatingWindow.style.display = 'none';
-  resultWindow.style.display = 'none';
+  if (questionWindow) questionWindow.style.display = 'block';
+  if (calculatingWindow) calculatingWindow.style.display = 'none';
+  if (resultWindow) resultWindow.style.display = 'none';
   
   // Reset state completely
   state.currentQuestionIndex = 0;

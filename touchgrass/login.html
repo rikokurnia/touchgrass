@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TouchGrass — Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">
+      <span>🌱</span> TOUCHGRASS
+    </a>
+    <div class="navbar-menu">
+      <a href="index.html" class="navbar-link">Home</a>
+      <a href="login.html" class="navbar-link" style="background: var(--win95-blue); color: var(--win95-white);">Login</a>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LOGIN PAGE
+       ============================================ -->
+  <main class="login-page">
+    <div class="win95-dialog login-window">
+      <div class="dialog-title-bar">
+        <div style="display: flex; align-items: center;">
+          <span class="dialog-icon">🔐</span>
+          <span>login.exe</span>
+        </div>
+        <div class="window-controls">
+          <span class="window-btn">_</span>
+          <span class="window-btn">×</span>
+        </div>
+      </div>
+      <div class="dialog-content">
+        <h2 class="pixel-heading" style="font-size: 0.85rem; margin-bottom: 1.5rem; text-shadow: none; color: #000080; text-align: center;">
+          AUTHENTICATION REQUIRED
+        </h2>
+        
+        <p style="text-align: center; font-size: 0.9rem; margin-bottom: 1.5rem; color: #404040;">
+          Please enter your credentials to access the diagnostic tool.<br>
+          <span style="font-size: 0.75rem; color: #808080;">(We don't actually verify anything. It's just for vibes.)</span>
+        </p>
+
+        <form class="login-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label class="form-label">Username:</label>
+            <input type="text" class="form-input" placeholder="dev_burnout_99" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Password:</label>
+            <input type="password" class="form-input" placeholder="••••••••" required>
+          </div>
+
+          <div class="form-group" style="margin-top: 0.5rem;">
+            <button type="submit" class="win95-btn win95-btn-primary" style="width: 100%; padding: 10px;">
+              🔑 LOGIN
+            </button>
+          </div>
+        </form>
+
+        <div class="login-divider">or</div>
+
+        <div style="text-align: center;">
+          <a href="dashboard.html" class="win95-btn" style="display: inline-block; text-decoration: none;">
+            👤 Continue as Guest
+          </a>
+        </div>
+
+        <div class="login-footer">
+          <p>Forgot password? <a href="#" style="color: var(--win95-blue);">Too bad.</a></p>
+          <p style="margin-top: 0.5rem;">Don't have an account? <a href="#" style="color: var(--win95-blue);">You don't need one.</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+
+</body>
+</html>
