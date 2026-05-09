@@ -1,231 +1,331 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TouchGrass — Should You Quit Programming?</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/png" href="public/images/logo.png">
-</head>
-<body>
-
-  <!-- ============================================
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TouchGrass — Should You Quit Programming?</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="public/images/logo.png" />
+  </head>
+  <body>
+    <!-- ============================================
        HEADER / HERO SECTION
        ============================================ -->
-  <header class="header-section">
-    <div class="hero-window">
-      <div class="title-bar">
-        <div class="title-text">
-          <span>🖥️</span> TOUCHGRASS.EXE
+    <header class="header-section">
+      <div class="hero-window">
+        <div class="title-bar">
+          <div class="title-text"><span>🖥️</span> TOUCHGRASS.EXE</div>
+          <div class="window-controls">
+            <span class="window-btn">_</span>
+            <span class="window-btn">□</span>
+            <span class="window-btn">×</span>
+          </div>
         </div>
-        <div class="window-controls">
-          <span class="window-btn">_</span>
-          <span class="window-btn">□</span>
-          <span class="window-btn">×</span>
+        <div class="window-content">
+          <h1 class="pixel-heading">
+            Should ME<br />Quit Programming?<span class="cursor-blink"></span>
+          </h1>
+          <p class="hero-subtitle">
+            A 2-minute diagnostic tool for developers who have forgotten what
+            sunlight looks like.
+          </p>
+          <p class="hero-tagline">
+            "Laugh at yourself before your code makes you cry."
+          </p>
+          <div class="hero-cta">
+            <a href="login.html" class="win95-btn win95-btn-primary">
+              > START DIAGNOSIS
+            </a>
+          </div>
+          <p
+            style="
+              text-align: center;
+              font-size: 0.8rem;
+              color: #808080;
+              margin-top: 1rem;
+            "
+          >
+            ⚠️ No developers were harmed in the making of this quiz.
+          </p>
         </div>
       </div>
-      <div class="window-content">
-        <h1 class="pixel-heading">
-          Should ME<br>Quit Programming?<span class="cursor-blink"></span>
-        </h1>
-        <p class="hero-subtitle">
-          A 2-minute diagnostic tool for developers who have forgotten what sunlight looks like.
-        </p>
-        <p class="hero-tagline">
-          "Laugh at yourself before your code makes you cry."
-        </p>
-        <div class="hero-cta">
-          <a href="login.html" class="win95-btn win95-btn-primary">
-            🚀 Start Diagnosis
-          </a>
-        </div>
-        <p style="text-align: center; font-size: 0.8rem; color: #808080; margin-top: 1rem;">
-          ⚠️ No developers were harmed in the making of this quiz.
-        </p>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- ============================================
+    <!-- ============================================
        CONTENT SECTIONS (Grass Background)
        ============================================ -->
-  <section class="content-section">
-    <div class="content-container">
+    <section class="content-section">
+      <div class="content-container">
+        <!-- ── Stats Dialog ── -->
+        <article class="win95-dialog">
+          <div class="dialog-title-bar">
+            <div style="display: flex; align-items: center">
+              <span class="dialog-icon">📊</span>
+              <span>burnout_stats.exe</span>
+            </div>
+            <div class="window-controls">
+              <span class="window-btn">_</span>
+              <span class="window-btn">×</span>
+            </div>
+          </div>
+          <div class="dialog-content">
+            <h2
+              class="pixel-heading"
+              style="
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                text-shadow: none;
+                color: #000080;
+              "
+            >
+              THE SITUATION IS DIRE
+            </h2>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">83%</span>
+                <span class="stat-label"
+                  >of developers reported burnout in 2023 (Stack Overflow)</span
+                >
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">73%</span>
+                <span class="stat-label"
+                  >of devs aged 18-24 have anxiety or depression (OSMI Mental
+                  Health in Tech (2023))</span
+                >
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">62%</span>
+                <span class="stat-label"
+                  >feel stressed at work regularly (JetBrains State of Developer
+                  Ecosystem 2023)</span
+                >
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">30%</span>
+                <span class="stat-label"
+                  >productivity boost from a 2-5 min micro-break (Harvard
+                  Business Review)</span
+                >
+              </div>
+            </div>
+          </div>
+        </article>
 
-      <!-- ── Stats Dialog ── -->
-      <article class="win95-dialog">
-        <div class="dialog-title-bar">
-          <div style="display: flex; align-items: center;">
-            <span class="dialog-icon">📊</span>
-            <span>burnout_stats.exe</span>
-          </div>
-          <div class="window-controls">
-            <span class="window-btn">_</span>
-            <span class="window-btn">×</span>
-          </div>
-        </div>
-        <div class="dialog-content">
-          <h2 class="pixel-heading" style="font-size: 1rem; margin-bottom: 1.5rem; text-shadow: none; color: #000080;">
-            THE SITUATION IS DIRE
-          </h2>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-number">83%</span>
-              <span class="stat-label">of developers reported burnout in 2023 (Stack Overflow)</span>
+        <!-- ── Hook / Problem Dialog ── -->
+        <article class="win95-dialog">
+          <div class="dialog-title-bar">
+            <div style="display: flex; align-items: center">
+              <span class="dialog-icon">⚠️</span>
+              <span>problem_statement.txt</span>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">73%</span>
-              <span class="stat-label">of devs aged 18-24 have anxiety or depression (OSMI Mental Health in Tech (2023))</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">62%</span>
-              <span class="stat-label">feel stressed at work regularly (JetBrains State of Developer Ecosystem 2023)</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">30%</span>
-              <span class="stat-label">productivity boost from a 2-5 min micro-break (Harvard Business Review)</span>
+            <div class="window-controls">
+              <span class="window-btn">_</span>
+              <span class="window-btn">×</span>
             </div>
           </div>
-        </div>
-      </article>
+          <div class="dialog-content">
+            <h2
+              class="pixel-heading"
+              style="
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                text-shadow: none;
+                color: #000080;
+              "
+            >
+              WHY DOES THIS EXIST?
+            </h2>
+            <p class="hook-text">
+              Let's be honest: mental health tools for developers are
+              <span class="highlight">too clinical</span>. They don't speak our
+              language. They don't understand the pain of a production bug at 2
+              AM. They don't know what it's like to cry over CSS centering.
+            </p>
+            <p class="hook-text">
+              Developers cope with
+              <span class="highlight"
+                >memes, dark humor, and Twitter doomscrolling</span
+              >. We needed a break experience that actually feels like it was
+              made BY developers, FOR developers.
+            </p>
+            <p class="hook-text">
+              <strong>TouchGrass</strong> is a low-friction, culturally
+              relatable micro-break that uses absurdity to help you laugh at
+              your own burnout. Because sometimes, the best therapy is realizing
+              you're destined to be a <em>Catfish Farmer</em>.
+            </p>
+            <ul class="feature-list">
+              <li>
+                No signup. No tracking. No cookies (except the edible ones).
+              </li>
+              <li>Takes 2 minutes — less time than your CI pipeline.</li>
+              <li>
+                100% browser-based. Works on your phone while you hide in the
+                bathroom.
+              </li>
+              <li>
+                Ends with a genuine motivational quote. We're funny, but we
+                care.
+              </li>
+            </ul>
+          </div>
+        </article>
 
-      <!-- ── Hook / Problem Dialog ── -->
-      <article class="win95-dialog">
-        <div class="dialog-title-bar">
-          <div style="display: flex; align-items: center;">
-            <span class="dialog-icon">⚠️</span>
-            <span>problem_statement.txt</span>
+        <!-- ── How It Works Dialog ── -->
+        <article class="win95-dialog">
+          <div class="dialog-title-bar">
+            <div style="display: flex; align-items: center">
+              <span class="dialog-icon">📖</span>
+              <span>how_it_works.exe</span>
+            </div>
+            <div class="window-controls">
+              <span class="window-btn">_</span>
+              <span class="window-btn">×</span>
+            </div>
           </div>
-          <div class="window-controls">
-            <span class="window-btn">_</span>
-            <span class="window-btn">×</span>
+          <div class="dialog-content">
+            <h2
+              class="pixel-heading"
+              style="
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                text-shadow: none;
+                color: #000080;
+              "
+            >
+              HOW IT WORKS
+            </h2>
+            <p class="hook-text">
+              Answer <strong>8 relatable questions</strong> about your developer
+              habits. Each answer secretly maps to one of four absurd
+              alternative career paths. Our highly unscientific scoring engine
+              calculates your destiny.
+            </p>
+            <p class="hook-text" style="margin-bottom: 1.5rem">
+              At the end, you receive your official result, a career transition
+              guide, and a random motivational quote fetched from the internet —
+              because even a joke should end with something real.
+            </p>
+            <div
+              style="
+                background: #000080;
+                color: #fff;
+                padding: 1rem;
+                font-family: &quot;Press Start 2P&quot;, cursive;
+                font-size: 0.65rem;
+                text-align: center;
+                line-height: 1.8;
+              "
+            >
+              1. START QUIZ<br />
+              2. ANSWER 8 QUESTIONS<br />
+              3. RECEIVE YOUR DESTINY<br />
+              4. TOUCH GRASS (OPTIONAL)
+            </div>
           </div>
-        </div>
-        <div class="dialog-content">
-          <h2 class="pixel-heading" style="font-size: 1rem; margin-bottom: 1.5rem; text-shadow: none; color: #000080;">
-            WHY DOES THIS EXIST?
-          </h2>
-          <p class="hook-text">
-            Let's be honest: mental health tools for developers are <span class="highlight">too clinical</span>. They don't speak our language. They don't understand the pain of a production bug at 2 AM. They don't know what it's like to cry over CSS centering.
-          </p>
-          <p class="hook-text">
-            Developers cope with <span class="highlight">memes, dark humor, and Twitter doomscrolling</span>. We needed a break experience that actually feels like it was made BY developers, FOR developers.
-          </p>
-          <p class="hook-text">
-            <strong>TouchGrass</strong> is a low-friction, culturally relatable micro-break that uses absurdity to help you laugh at your own burnout. Because sometimes, the best therapy is realizing you're destined to be a <em>Catfish Farmer</em>.
-          </p>
-          <ul class="feature-list">
-            <li>No signup. No tracking. No cookies (except the edible ones).</li>
-            <li>Takes 2 minutes — less time than your CI pipeline.</li>
-            <li>100% browser-based. Works on your phone while you hide in the bathroom.</li>
-            <li>Ends with a genuine motivational quote. We're funny, but we care.</li>
-          </ul>
-        </div>
-      </article>
+        </article>
 
-      <!-- ── How It Works Dialog ── -->
-      <article class="win95-dialog">
-        <div class="dialog-title-bar">
-          <div style="display: flex; align-items: center;">
-            <span class="dialog-icon">📖</span>
-            <span>how_it_works.exe</span>
+        <!-- ── Archetypes Preview Dialog ── -->
+        <article class="win95-dialog">
+          <div class="dialog-title-bar">
+            <div style="display: flex; align-items: center">
+              <span class="dialog-icon">🎯</span>
+              <span>possible_outcomes.dll</span>
+            </div>
+            <div class="window-controls">
+              <span class="window-btn">_</span>
+              <span class="window-btn">×</span>
+            </div>
           </div>
-          <div class="window-controls">
-            <span class="window-btn">_</span>
-            <span class="window-btn">×</span>
+          <div class="dialog-content">
+            <h2
+              class="pixel-heading"
+              style="
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                text-shadow: none;
+                color: #000080;
+              "
+            >
+              YOUR POSSIBLE FATES
+            </h2>
+            <div class="archetype-grid">
+              <div class="archetype-card">
+                <span class="archetype-emoji">🐟</span>
+                <span class="archetype-name">Catfish<br />Farmer</span>
+                <p class="archetype-desc">
+                  Patient. Nurturing. Ok with mud. You debug like you'd raise
+                  catfish.
+                </p>
+              </div>
+              <div class="archetype-card">
+                <span class="archetype-emoji">🌿</span>
+                <span class="archetype-name"
+                  >Professional<br />Grass Toucher</span
+                >
+                <p class="archetype-desc">
+                  Needs sunlight. Disconnected. You have gone too deep. Go
+                  outside.
+                </p>
+              </div>
+              <div class="archetype-card">
+                <span class="archetype-emoji">🚢</span>
+                <span class="archetype-name"
+                  >Submarine<br />Parking Attendant</span
+                >
+                <p class="archetype-desc">
+                  Over-engineers everything. You'd design Kubernetes for
+                  underwater vehicles.
+                </p>
+              </div>
+              <div class="archetype-card">
+                <span class="archetype-emoji">🐔</span>
+                <span class="archetype-name">Chicken Coop<br />Guard</span>
+                <p class="archetype-desc">
+                  Disciplined. Routine-driven. Your stand-up is late. Chickens
+                  wake at 4 AM.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="dialog-content">
-          <h2 class="pixel-heading" style="font-size: 1rem; margin-bottom: 1.5rem; text-shadow: none; color: #000080;">
-            HOW IT WORKS
-          </h2>
-          <p class="hook-text">
-            Answer <strong>8 relatable questions</strong> about your developer habits. Each answer secretly maps to one of four absurd alternative career paths. Our highly unscientific scoring engine calculates your destiny.
-          </p>
-          <p class="hook-text" style="margin-bottom: 1.5rem;">
-            At the end, you receive your official result, a career transition guide, and a random motivational quote fetched from the internet — because even a joke should end with something real.
-          </p>
-          <div style="background: #000080; color: #fff; padding: 1rem; font-family: 'Press Start 2P', cursive; font-size: 0.65rem; text-align: center; line-height: 1.8;">
-            1. START QUIZ<br>
-            2. ANSWER 8 QUESTIONS<br>
-            3. RECEIVE YOUR DESTINY<br>
-            4. TOUCH GRASS (OPTIONAL)
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- ── Archetypes Preview Dialog ── -->
-      <article class="win95-dialog">
-        <div class="dialog-title-bar">
-          <div style="display: flex; align-items: center;">
-            <span class="dialog-icon">🎯</span>
-            <span>possible_outcomes.dll</span>
-          </div>
-          <div class="window-controls">
-            <span class="window-btn">_</span>
-            <span class="window-btn">×</span>
-          </div>
+        <!-- ── CTA Section ── -->
+        <div id="quiz-section" class="cta-section">
+          <h2 class="pixel-heading">READY TO FACE THE TRUTH?</h2>
+          <p class="cta-text">
+            8 questions. 2 minutes. 1 absurd destiny.<br />
+            No data collected. No cookies. Just vibes.
+          </p>
+          <a
+            href="login.html"
+            class="win95-btn win95-btn-primary"
+            style="font-size: 1.2rem; padding: 12px 32px"
+          >
+            >  BEGIN DIAGNOSIS
+          </a>
+          <p style="font-size: 0.75rem; color: #808080; margin-top: 1rem">
+            By clicking this button, you agree that your career is probably fine
+            and this is just a joke.<br />
+            (But seriously, take a break.)
+          </p>
         </div>
-        <div class="dialog-content">
-          <h2 class="pixel-heading" style="font-size: 1rem; margin-bottom: 1.5rem; text-shadow: none; color: #000080;">
-            YOUR POSSIBLE FATES
-          </h2>
-          <div class="archetype-grid">
-            <div class="archetype-card">
-              <span class="archetype-emoji">🐟</span>
-              <span class="archetype-name">Catfish<br>Farmer</span>
-              <p class="archetype-desc">Patient. Nurturing. Ok with mud. You debug like you'd raise catfish.</p>
-            </div>
-            <div class="archetype-card">
-              <span class="archetype-emoji">🌿</span>
-              <span class="archetype-name">Professional<br>Grass Toucher</span>
-              <p class="archetype-desc">Needs sunlight. Disconnected. You have gone too deep. Go outside.</p>
-            </div>
-            <div class="archetype-card">
-              <span class="archetype-emoji">🚢</span>
-              <span class="archetype-name">Submarine<br>Parking Attendant</span>
-              <p class="archetype-desc">Over-engineers everything. You'd design Kubernetes for underwater vehicles.</p>
-            </div>
-            <div class="archetype-card">
-              <span class="archetype-emoji">🐔</span>
-              <span class="archetype-name">Chicken Coop<br>Guard</span>
-              <p class="archetype-desc">Disciplined. Routine-driven. Your stand-up is late. Chickens wake at 4 AM.</p>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── CTA Section ── -->
-      <div id="quiz-section" class="cta-section">
-        <h2 class="pixel-heading">READY TO FACE THE TRUTH?</h2>
-        <p class="cta-text">
-          8 questions. 2 minutes. 1 absurd destiny.<br>
-          No data collected. No cookies. Just vibes.
-        </p>
-        <a href="login.html" class="win95-btn win95-btn-primary" style="font-size: 1.2rem; padding: 12px 32px;">
-          🌱 BEGIN DIAGNOSIS
-        </a>
-        <p style="font-size: 0.75rem; color: #808080; margin-top: 1rem;">
-          By clicking this button, you agree that your career is probably fine and this is just a joke.<br>
-          (But seriously, take a break.)
-        </p>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ============================================
+    <!-- ============================================
        FOOTER
        ============================================ -->
-  <footer class="footer-section">
-    <p>© 2026 TouchGrass. Not a real career assessment tool.</p>
-    <p style="margin-top: 0.5rem;">
-      Built with 💙, burnout, and way too much caffeine.
-    </p>
-    <p style="margin-top: 0.5rem; font-size: 0.7rem;">
-      Data sources: Stack Overflow Survey 2023, OSMI Mental Health in Tech, JetBrains State of Developer Ecosystem 2023
-    </p>
-  </footer>
-
-</body>
+    <footer class="footer-section">
+      <p>© 2026 TouchGrass. Not a real career assessment tool.</p>
+      <p style="margin-top: 0.5rem">
+        Built by Riko Kurnia
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.7rem">
+        Data sources: Stack Overflow Survey 2023, OSMI Mental Health in Tech,
+        JetBrains State of Developer Ecosystem 2023
+      </p>
+    </footer>
+  </body>
 </html>
