@@ -4,7 +4,7 @@
 
 **TouchGrass** is a humor-driven, retro-themed web quiz designed to give burnt-out developers a 2-minute micro-break. Built with a nostalgic Windows 95 aesthetic, it diagnoses which absurd alternative career you are destined for — because sometimes the best therapy is realizing you should be a **Catfish Farmer**.
 
-🔗 **Live Demo:** [https://touchgrass.vercel.app](https://touchgrass.vercel.app) *(update with your actual Vercel URL)*
+🔗 **Live Demo:** [https://touchgrass.vercel.app](https://touchhgrass.vercel.app) 
 
 ---
 
